@@ -2,21 +2,24 @@ import { NextResponse } from "next/server"
 import type { NextRequest } from "next/server"
 
 export function middleware(req: NextRequest) {
-  // Отговаря на всички OPTIONS, за да няма 400
+  const res = NextResponse.next()
+
+  // добавяме CORS за всяка заявка (GET/POST/OPTIONS)
+  res.headers.set("Access-Control-Allow-Origin", "*")
+  res.headers.set("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE,OPTIONS")
+  res.headers.set("Access-Control-Allow-Headers", "*")
+
+  // ако е preflight → връщаме празен 204
   if (req.method === "OPTIONS") {
     return new NextResponse(null, {
       status: 204,
-      headers: {
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "GET,POST,PUT,DELETE,OPTIONS",
-        "Access-Control-Allow-Headers": "*",
-      },
+      headers: res.headers,
     })
   }
 
-  return NextResponse.next()
+  return res
 }
 
 export const config = {
-  matcher: ["/:path*"], // важи за всички пътища (вкл. /, /api/auth/logout и т.н.)
+  matcher: ["/:path*"], // важи за всички пътища
 }
