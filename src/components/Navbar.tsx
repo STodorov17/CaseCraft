@@ -3,6 +3,7 @@ import MaxWidthWrapper from "./MaxWidthWrapper"
 import { buttonVariants } from "./ui/button"
 import { ArrowRight } from "lucide-react"
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server"
+import Image from "next/image"
 
 const Navbar = async () => {
     const { getUser } = getKindeServerSession()
@@ -15,7 +16,10 @@ const Navbar = async () => {
             <MaxWidthWrapper>
                 <div className="flex h-14 items-center justify-between border-b border-zinc-200">
                     <Link href='/' className="flex z-40 font-semibold">
-                        case<span className="text-purple-700">craft</span>
+                        <Image src="/sitelogo3.png" alt="CaseCraft Logo" width={37} height={28} className="rounded-md" />
+                        <div className="flex h-14 items-center justify-between border-b border-zinc-200">
+                            <span>case<span className="text-purple-600">craft</span></span>
+                        </div>
                     </Link>
 
                     <div className="h-full flex items-center space-x-4">
