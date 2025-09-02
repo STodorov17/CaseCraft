@@ -46,7 +46,7 @@ const Page = () => {
 
     const onDropAccepted = (acceptedFiles: File[]) => {
         startUpload(acceptedFiles, { configId: undefined })
-        
+
         setIsDragOver(false)
     }
 
@@ -70,38 +70,41 @@ const Page = () => {
                 onDragLeave={() => setIsDragOver(false)}
             >
                 {({ getRootProps, getInputProps }) => (
-                    <div className='flex flex-col items-center justify-center h-screen w-screen ' {...getRootProps()}>
-                        <input {...getInputProps()} />
-                        {isDragOver ? (<MousePointerSquareDashed className='h-6 w-6 text-zinc-500 mb-2' />
-                        ) : isUploading || isPending ? (
-                            <Loader2 className='animate-spin h-6 w-6 text-zinc-500 mb-2' />
-                        ) : (
-                            <Image className='h-6 w-6 text-zinc-500 mb-2' />
-                        )}
-                        <div className="flex flex-col justify-center mb-2 text-sm text-zinc-700">
-                            {isUploading ? (
-                                <div className="flex flex-col items-center">
-                                    <p>Uploading...</p>
-                                    <Progress value={uploadProgress} className="mt-2 w-40 h-2 bg-gray-300" />
-                                </div>
-                            ) : isPending ? (
-                                <div className="flex flex-col items-center">
-                                    <p>Redirecting, please wait...</p>
-                                </div>
-                            ) : isDragOver ? (
-                                <p>
-                                    <span className="font-semibold">Drop file </span>
-                                    to upload
-                                </p>
+                    <div className="flex items-center justify-center w-full">
+                        <div className="flex flex-col items-center justify-center h-[400px] w-full max-w-lg border-2 border-dashed border-gray-300 rounded-xl bg-white hover:border-purple-500 hover:bg-purple-50 transition cursor-pointer" {...getRootProps()}>
+                            <input {...getInputProps()} />
+                            {isDragOver ? (
+                                <MousePointerSquareDashed className="h-10 w-10 text-purple-500 mb-4" />
+                            ) : isUploading || isPending ? (
+                                <Loader2 className="animate-spin h-10 w-10 text-purple-500 mb-4" />
                             ) : (
-                                <p>
-                                    <span className="font-semibold">Click to upload </span>
-                                    or drag and drop
-                                </p>
+                                <Image className="h-10 w-10 text-purple-500 mb-4" />
                             )}
-                        </div>
+                            <div className="flex flex-col justify-center mb-2 text-sm text-zinc-700">
+                                {isUploading ? (
+                                    <div className="flex flex-col items-center">
+                                        <p>Uploading...</p>
+                                        <Progress value={uploadProgress} className="mt-2 w-40 h-2 bg-gray-300" />
+                                    </div>
+                                ) : isPending ? (
+                                    <div className="flex flex-col items-center">
+                                        <p>Redirecting, please wait...</p>
+                                    </div>
+                                ) : isDragOver ? (
+                                    <p>
+                                        <span className="font-semibold">Drop file </span>
+                                        to upload
+                                    </p>
+                                ) : (
+                                    <p>
+                                        <span className="font-semibold">Click to upload </span>
+                                        or drag and drop
+                                    </p>
+                                )}
+                            </div>
 
-                        {isPending ? null : (<p className="text-xs text-zinc-500">PNG, JPG, JPEG</p>)}
+                            {isPending ? null : (<p className="text-xs text-zinc-500">PNG, JPG, JPEG</p>)}
+                        </div>
                     </div>
                 )}
             </Dropzone>

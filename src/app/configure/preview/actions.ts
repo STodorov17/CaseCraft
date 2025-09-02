@@ -42,7 +42,12 @@ export const createCheckoutSession = async ({
   const { finish, material } = configuration
 
   let price = BASE_PRICE
+
   if (finish === 'textured') price += PRODUCT_PRICES.finish.textured
+  if (finish === 'matte') price += PRODUCT_PRICES.finish.matte
+  if (finish === 'glossy') price += PRODUCT_PRICES.finish.glossy
+  if (finish === 'frosted') price += PRODUCT_PRICES.finish.frosted
+  if (material === 'tpu') price += PRODUCT_PRICES.material.tpu
   if (material === 'polycarbonate')
     price += PRODUCT_PRICES.material.polycarbonate
 
@@ -71,7 +76,6 @@ export const createCheckoutSession = async ({
 
   const product = await stripe.products.create({
     name: 'Custom iPhone Case',
-    images: [configuration.imageUrl],
     default_price_data: {
       currency: 'BGN',
       unit_amount: price,

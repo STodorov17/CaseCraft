@@ -1,7 +1,7 @@
 import { Icons } from "@/components/Icons"
 import MaxWidthWrapper from "@/components/MaxWidthWrapper"
 import Phone from "@/components/Phone"
-import { Check, Star, Sparkles, Layers, Image as ImageIcon } from "lucide-react"
+import { Star, Sparkles, Layers, Image as ImageIcon } from "lucide-react"
 import Link from "next/link"
 
 export default function Home() {
@@ -10,14 +10,10 @@ export default function Home() {
       {/* Hero */}
       <section>
   <MaxWidthWrapper className="pb-24 pt-16 lg:grid lg:grid-cols-2 lg:gap-x-12 xl:gap-x-16 lg:pt-28 xl:pt-36 lg:pb-52">
-    
+
     {/* Phone preview в ляво */}
     <div className="flex justify-center lg:justify-end relative">
       <div className="relative w-64 md:w-80">
-        <img
-          src="/line.png"
-          className="absolute w-24 -left-8 -bottom-8 select-none opacity-70"
-        />
         <Phone className="w-full" imgSrc="/testimonials/1.jpg" />
       </div>
     </div>
@@ -55,11 +51,11 @@ export default function Home() {
       <div className="mt-8 flex flex-col sm:flex-row items-center sm:items-start gap-5">
         {/* Avatars */}
         <div className="flex -space-x-4">
+          <img className="h-12 w-12 rounded-full ring-2 ring-white object-cover" src="/users/user-4.jpg" alt="user" />
           <img className="h-12 w-12 rounded-full ring-2 ring-white object-cover" src="/users/user-1.png" alt="user" />
           <img className="h-12 w-12 rounded-full ring-2 ring-white object-cover" src="/users/user-2.png" alt="user" />
-          <img className="h-12 w-12 rounded-full ring-2 ring-white object-cover" src="/users/user-3.jpg" alt="user" />
-          <img className="h-12 w-12 rounded-full ring-2 ring-white object-cover" src="/users/user-4.jpg" alt="user" />
           <img className="h-12 w-12 rounded-full ring-2 ring-white object-cover" src="/users/user-5.jpg" alt="user" />
+          <img className="h-12 w-12 rounded-full ring-2 ring-white object-cover" src="/users/user-3.jpg" alt="user" />
         </div>
 
         {/* Stars */}
