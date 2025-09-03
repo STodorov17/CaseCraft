@@ -1,20 +1,6 @@
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
+import {Card,CardContent,CardDescription,CardFooter,CardHeader,CardTitle,} from '@/components/ui/card'
 import { Progress } from '@/components/ui/progress'
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from '@/components/ui/table'
+import {Table,TableBody,TableCell,TableHead,TableHeader,TableRow,} from '@/components/ui/table'
 import { db } from '@/db'
 import { formatPrice } from '@/lib/utils'
 import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server'
@@ -71,8 +57,8 @@ const Page = async () => {
     },
   })
 
-  const WEEKLY_GOAL = 500
-  const MONTHLY_GOAL = 2500
+  const WEEKLY_GOAL = 600
+  const MONTHLY_GOAL = 5000
 
   return (
     <div className='flex min-h-screen w-full bg-muted/40'>
