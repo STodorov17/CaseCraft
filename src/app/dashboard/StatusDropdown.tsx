@@ -15,9 +15,9 @@ import { changeOrderStatus } from './actions'
 import { useRouter } from 'next/navigation'
 
 const LABEL_MAP: Record<keyof typeof OrderStatus, string> = {
-  awaiting_shipment: 'Awaiting Shipment',
-  fulfilled: 'Fulfilled',
-  shipped: 'Shipped',
+  awaiting_shipment: 'Очаква изпращане',
+  fulfilled: 'Изпълнена',
+  shipped: 'Изпратена',
 }
 
 const StatusDropdown = ({
