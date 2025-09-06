@@ -5,18 +5,18 @@ import { usePathname } from 'next/navigation'
 
 const STEPS = [
   {
-    name: 'Step 1',
-    description: 'Add image',
+    name: 'Стъпка 1',
+    description: 'Добави снимка',
     url: '/upload',
   },
   {
-    name: 'Step 2',
-    description: 'Customize design',
+    name: 'Стъпка 2',
+    description: 'Персонализирай своя дизайн',
     url: '/design',
   },
   {
-    name: 'Step 3',
-    description: 'Summary',
+    name: 'Стъпка 3',
+    description: 'Прегледай и поръчай',
     url: '/preview',
   },
 ]

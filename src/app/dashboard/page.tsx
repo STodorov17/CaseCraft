@@ -1,6 +1,7 @@
-import {Card,CardContent,CardDescription,CardFooter,CardHeader,CardTitle,} from '@/components/ui/card'
+import type { Dispatch, SetStateAction } from 'react'
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import { Progress } from '@/components/ui/progress'
-import {Table,TableBody,TableCell,TableHead,TableHeader,TableRow,} from '@/components/ui/table'
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
 import { db } from '@/db'
 import { formatPrice } from '@/lib/utils'
 import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server'
@@ -67,14 +68,14 @@ const Page = async () => {
           <div className='grid gap-4 sm:grid-cols-2'>
             <Card>
               <CardHeader className='pb-2'>
-                <CardDescription>Last Week</CardDescription>
+                <CardDescription>Последната седмица</CardDescription>
                 <CardTitle className='text-4xl'>
                   {formatPrice(lastWeekSum._sum.amount ?? 0)}
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <div className='text-sm text-muted-foreground'>
-                  of {formatPrice(WEEKLY_GOAL)} goal
+                  от цел {formatPrice(WEEKLY_GOAL)}
                 </div>
               </CardContent>
               <CardFooter>
@@ -85,14 +86,14 @@ const Page = async () => {
             </Card>
             <Card>
               <CardHeader className='pb-2'>
-                <CardDescription>Last Month</CardDescription>
+                <CardDescription>Последният месец</CardDescription>
                 <CardTitle className='text-4xl'>
                   {formatPrice(lastMonthSum._sum.amount ?? 0)}
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <div className='text-sm text-muted-foreground'>
-                  of {formatPrice(MONTHLY_GOAL)} goal
+                  от цел {formatPrice(MONTHLY_GOAL)}
                 </div>
               </CardContent>
               <CardFooter>
@@ -103,17 +104,17 @@ const Page = async () => {
             </Card>
           </div>
 
-          <h1 className='text-4xl font-bold tracking-tight'>Incoming orders</h1>
+          <h1 className='text-4xl font-bold tracking-tight'>Нови поръчки</h1>
 
           <Table>
             <TableHeader>
               <TableRow>
-                <TableHead>Customer</TableHead>
-                <TableHead className='hidden sm:table-cell'>Status</TableHead>
+                <TableHead>Клиент</TableHead>
+                <TableHead className='hidden sm:table-cell'>Статус</TableHead>
                 <TableHead className='hidden sm:table-cell'>
-                  Purchase date
+                  Дата на покупка
                 </TableHead>
-                <TableHead className='text-right'>Amount</TableHead>
+                <TableHead className='text-right'>Сума</TableHead>
               </TableRow>
             </TableHeader>
 

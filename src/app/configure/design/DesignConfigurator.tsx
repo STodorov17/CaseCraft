@@ -37,8 +37,8 @@ const DesignConfigurator = ({ configId, imageUrl, imageDimensions }: DesignConfi
         onError: () => {
             toast.error(
                 <div>
-                    <p className="font-bold">Something went wrong</p>
-                    <p className="text-sm">There was a problem saving your config, please try again.</p>
+                    <p className="font-bold">Нещо се обърка</p>
+                    <p className="text-sm">Възникна проблем при запазването на конфигурацията. Моля, опитай отново.</p>
                 </div>,
                 { position: "top-center", duration: 4000 }
             )
@@ -108,8 +108,8 @@ const DesignConfigurator = ({ configId, imageUrl, imageDimensions }: DesignConfi
         } catch (err) {
             toast.error(
                 <div>
-                    <p className="font-bold">Something went wrong</p>
-                    <p className="text-sm">There was a problem saving your config, please try again.</p>
+                    <p className="font-bold">Нещо се обърка</p>
+                    <p className="text-sm">Възникна проблем при запазването на конфигурацията. Моля, опитай отново.</p>
                 </div>,
                 { position: "top-center", duration: 4000 }
             )
@@ -128,14 +128,14 @@ const DesignConfigurator = ({ configId, imageUrl, imageDimensions }: DesignConfi
 
     return (
         <div className="relative mt-16 grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20 pb-20">
-            {/* LEFT - Phone Preview */}
+            {/* ЛЯВО - Визуализация на калъфа */}
             <div
                 ref={containerRef}
                 className="relative h-[37.5rem] overflow-hidden col-span-2 w-full max-w-4xl flex items-center justify-center rounded-2xl shadow-lg bg-slate-50 border border-gray-200 p-8"
             >
                 <div className="relative w-60 bg-opacity-50 pointer-events-none aspect-[896/1831]">
                     <AspectRatio ref={phoneCaseRef} ratio={896 / 1831} className="pointer-events-none relative z-50">
-                        <NextImage fill alt="phone image" src="/phone-template.png" className="pointer-events-none z-50 select-none" />
+                        <NextImage fill alt="изображение на телефон" src="/phone-template.png" className="pointer-events-none z-50 select-none" />
                     </AspectRatio>
                     <div className="absolute z-40 inset-0 left-[3px] top-px right-[3px] bottom-px rounded-[32px] shadow-[0_0_0_9999px_rgba(229,231,235,0.6)]" />
                     <div className={cn("absolute inset-0 left-[3px] top-px right-[3px] bottom-px rounded-[32px]", `bg-${options.color.tw}`)} />
@@ -167,28 +167,28 @@ const DesignConfigurator = ({ configId, imageUrl, imageDimensions }: DesignConfi
                     }}
                 >
                     <div className="relative w-full h-full">
-                        <NextImage src={imageUrl} fill alt="your image" className="pointer-events-none" />
+                        <NextImage src={imageUrl} fill alt="твоето изображение" className="pointer-events-none" />
                     </div>
                 </Rnd>
             </div>
 
-            {/* RIGHT - Configurator */}
+            {/* ДЯСНО - Конфигуратор */}
             <div className="h-[37.5rem] w-full col-span-full lg:col-span-1 flex flex-col bg-white rounded-2xl shadow-lg border border-gray-200 
                 lg:min-w-[420px] xl:min-w-[480px]">
                 <ScrollArea className="relative flex-1 overflow-auto">
                     <div aria-hidden="true" className="absolute z-10 inset-x-0 bottom-0 h-12 bg-gradient-to-t from-white pointer-events-none" />
 
-                    <div className="px-10 pb-12 pt-8 space-y-8">   {/* <-- от px-8 на px-10 */}
-                        <h2 className="tracking-tight font-bold text-3xl">Customize your case</h2>
+                    <div className="px-10 pb-12 pt-8 space-y-8">
+                        <h2 className="tracking-tight font-bold text-3xl">Персонализирай своя калъф</h2>
                         <div className="w-full h-px bg-zinc-200" />
 
                         <div className="flex flex-col gap-6">
-                            {/* Color */}
+                            {/* Цвят */}
                             <RadioGroup
                                 value={options.color}
                                 onChange={(val) => setOptions((prev) => ({ ...prev, color: val }))}
                             >
-                                <Label>Color: {options.color.label}</Label>
+                                <Label>Цвят: {options.color.label}</Label>
                                 <div className="mt-3 flex items-center space-x-3">
                                     {COLORS.map((color) => (
                                         <RadioGroup.Option
@@ -207,9 +207,9 @@ const DesignConfigurator = ({ configId, imageUrl, imageDimensions }: DesignConfi
                                 </div>
                             </RadioGroup>
 
-                            {/* Model */}
+                            {/* Модел */}
                             <div className="relative flex flex-col gap-3 w-full">
-                                <Label>Model</Label>
+                                <Label>Модел</Label>
                                 <DropdownMenu>
                                     <DropdownMenuTrigger asChild>
                                         <Button variant="outline" role="combobox" className="w-full justify-between">
@@ -234,14 +234,14 @@ const DesignConfigurator = ({ configId, imageUrl, imageDimensions }: DesignConfi
                                 </DropdownMenu>
                             </div>
 
-                            {/* Materials & Finishes */}
+                            {/* Материали и покрития */}
                             {[MATERIALS, FINISHES].map(({ name, options: selectableOptions }) => (
                                 <RadioGroup
                                     key={name}
                                     value={options[name]}
                                     onChange={(val) => setOptions((prev) => ({ ...prev, [name]: val }))}
                                 >
-                                    <Label>{name.slice(0, 1).toUpperCase() + name.slice(1)}</Label>
+                                    <Label>{name === "material" ? "Материал" : "Покритие"}</Label>
                                     <div className="mt-3 space-y-4">
                                         {selectableOptions.map((option) => (
                                             <RadioGroup.Option
@@ -278,7 +278,7 @@ const DesignConfigurator = ({ configId, imageUrl, imageDimensions }: DesignConfi
                     </div>
                 </ScrollArea>
 
-                {/* Bottom Bar */}
+                {/* Долен бар */}
                 <div className="w-full px-8 py-4 bg-white border-t border-zinc-200 rounded-b-2xl">
                     <div className="flex items-center justify-between">
                         <p className="font-semibold text-lg text-gray-900">
@@ -296,7 +296,7 @@ const DesignConfigurator = ({ configId, imageUrl, imageDimensions }: DesignConfi
                             }
                             className="px-6 py-3 rounded-lg bg-gradient-to-r from-purple-600 to-pink-500 text-white font-semibold shadow hover:scale-105 transition"
                         >
-                            Continue
+                            Продължи
                             <ArrowRight className="h-4 w-4 ml-2" />
                         </Button>
                     </div>

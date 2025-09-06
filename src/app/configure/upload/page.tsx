@@ -12,7 +12,7 @@ import { toast } from "sonner"
 const Page = () => {
 
     const [isDragOver, setIsDragOver] = useState<boolean>(false)
-    const [uploadProgress, setUploadProgress] = useState<number>(0) // number moje da se mahne!!!
+    const [uploadProgress, setUploadProgress] = useState<number>(0)
     const router = useRouter()
 
     const { startUpload, isUploading } = useUploadThing("imageUploader", {
@@ -32,9 +32,9 @@ const Page = () => {
 
         setIsDragOver(false)
 
-        toast.error(`${file.file.type} type is not supported.`,
+        toast.error(`${file.file.type} не се поддържа.`,
             {
-                description: "Please choose a PNG, JPG or JPEG image instead.",
+                description: "Моля, избери изображение във формат PNG, JPG или JPEG.",
                 position: "top-center",
                 style: {
                     backgroundColor: "#FF3F1F",
@@ -83,27 +83,27 @@ const Page = () => {
                             <div className="flex flex-col justify-center mb-2 text-sm text-zinc-700">
                                 {isUploading ? (
                                     <div className="flex flex-col items-center">
-                                        <p>Uploading...</p>
+                                        <p>Качване...</p>
                                         <Progress value={uploadProgress} className="mt-2 w-40 h-2 bg-gray-300" />
                                     </div>
                                 ) : isPending ? (
                                     <div className="flex flex-col items-center">
-                                        <p>Redirecting, please wait...</p>
+                                        <p>Пренасочване, моля изчакай...</p>
                                     </div>
                                 ) : isDragOver ? (
                                     <p>
-                                        <span className="font-semibold">Drop file </span>
-                                        to upload
+                                        <span className="font-semibold">Пусни файла </span>
+                                        за качване
                                     </p>
                                 ) : (
                                     <p>
-                                        <span className="font-semibold">Click to upload </span>
-                                        or drag and drop
+                                        <span className="font-semibold">Кликни за качване </span>
+                                        или влачи и пусни
                                     </p>
                                 )}
                             </div>
 
-                            {isPending ? null : (<p className="text-xs text-zinc-500">PNG, JPG, JPEG</p>)}
+                            {isPending ? null : (<p className="text-xs text-zinc-500">Поддържани формати: PNG, JPG, JPEG</p>)}
                         </div>
                     </div>
                 )}

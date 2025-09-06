@@ -21,20 +21,20 @@ export default function Home() {
     {/* Текст и CTA в дясно */}
     <div className="mt-10 lg:mt-0 flex flex-col justify-center px-6 lg:px-0 text-center lg:text-left">
       <h1 className="tracking-tight font-extrabold text-gray-900 text-5xl md:text-6xl lg:text-7xl leading-tight">
-        Turn your{" "}
+         Превърни своите{" "}
         <span className="bg-gradient-to-r from-purple-600 to-pink-500 px-2 text-white rounded-md">
-          Memories
+          спомени
         </span>{" "}
-        into{" "}
+        в{" "}
         <span className="bg-gradient-to-r from-pink-500 to-purple-600 px-2 text-white rounded-md">
-          Custom Cases
+          уникални калъфи
         </span>
       </h1>
 
       <p className="mt-6 text-lg max-w-prose text-gray-600">
-        Upload your favorite photo, choose your style, and create a{" "}
-        <span className="font-semibold text-gray-900">one-of-a-kind</span> case
-        that protects your phone and keeps your memories close.
+        Качи любимата си снимка, избери стил и създай{" "}
+        <span className="font-semibold text-gray-900">неповторим</span> калъф,
+        който защитава телефона ти и пази спомените ти близо до теб.
       </p>
 
       {/* CTA бутон */}
@@ -43,7 +43,7 @@ export default function Home() {
           href="/configure/upload"
           className="px-6 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-pink-500 text-white font-semibold shadow-lg hover:scale-105 transition"
         >
-          Start Designing
+          Започни да създаваш
         </Link>
       </div>
 
@@ -68,7 +68,7 @@ export default function Home() {
               <Star className="h-5 w-5 text-purple-600 fill-purple-600" />
           </div>
           <p className="text-sm">
-            <span className="font-semibold">1,250+</span> happy customers
+            <span className="font-semibold">1,250+</span> доволни клиенти
           </p>
         </div>
       </div>
@@ -81,8 +81,8 @@ export default function Home() {
       <section className="bg-slate-100 py-24">
         <MaxWidthWrapper className="flex flex-col items-center gap-16">
           <h2 className="text-4xl md:text-5xl font-bold text-center text-gray-900">
-            How it <span className="relative px-2">
-              Works
+             Как <span className="relative px-2">
+              работи
               <Icons.brushstroke className="hidden sm:block pointer-events-none absolute inset-x-0 -bottom-3 text-pink-500" />
             </span>
           </h2>
@@ -90,23 +90,23 @@ export default function Home() {
           <div className="grid gap-12 sm:grid-cols-3">
             <div className="flex flex-col items-center text-center gap-4">
               <ImageIcon className="h-10 w-10 text-purple-600" />
-              <h3 className="font-semibold text-lg">Upload Your Photo</h3>
+              <h3 className="font-semibold text-lg">Качи своя снимка</h3>
               <p className="text-gray-600 text-sm">
-                Choose your favorite memory or design to start creating.
+                  Избери любим спомен или дизайн, за да започнеш създаването.
               </p>
             </div>
             <div className="flex flex-col items-center text-center gap-4">
               <Layers className="h-10 w-10 text-purple-600" />
-              <h3 className="font-semibold text-lg">Customize Your Style</h3>
+              <h3 className="font-semibold text-lg">Отркий своя стил</h3>
               <p className="text-gray-600 text-sm">
-                Select materials, colors, and finishes for a personal touch.
+                Избери материали, цветове и покрития за личен завършек.
               </p>
             </div>
             <div className="flex flex-col items-center text-center gap-4">
               <Sparkles className="h-10 w-10 text-purple-600" />
-              <h3 className="font-semibold text-lg">Enjoy & Show Off</h3>
+              <h3 className="font-semibold text-lg">Наслаждавай се и се похвали</h3>
               <p className="text-gray-600 text-sm">
-                Get your case delivered and show it off with pride.
+                Получи своя калъф и го покажи с гордост.
               </p>
             </div>
           </div>
@@ -117,11 +117,11 @@ export default function Home() {
       <section className="bg-gradient-to-r from-purple-600 to-pink-500 py-24 text-white">
         <MaxWidthWrapper className="flex flex-col items-center text-center">
           <h2 className="text-3xl md:text-4xl font-bold">
-            CaseCraft is the most loved custom case maker in the world
+            CaseCraft е най-обичаният производител на персонализирани калъфи в България
           </h2>
           <p className="mt-4 text-lg max-w-2xl">
-            Thousands of customers trust us to turn their memories into lasting designs.
-            Premium materials, fast delivery, and guaranteed satisfaction.
+            Хиляди клиенти ни се доверяват да превърнем спомените им в трайни дизайни.
+  Висококачествени материали, бърза доставка и гарантирано удовлетворение.
           </p>
 
           {/* ⭐ Customers & Reviews */}
@@ -145,7 +145,7 @@ export default function Home() {
                 <Star className="h-5 w-5 text-yellow-300 fill-yellow-300" />
               </div>
               <p className="text-sm md:text-base">
-                Over <span className="font-semibold">1,250+</span> happy customers
+                Над <span className="font-semibold">1,250+</span> доволни клиенти
               </p>
             </div>
           </div>
@@ -171,17 +171,17 @@ export default function Home() {
             {/* Right content */}
             <div className="text-center md:text-left">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-                Ready to create your first product?
+                Готов ли си да създадеш своя първи продукт?
               </h2>
               <p className="mt-4 text-lg text-gray-600 max-w-lg">
-                Start designing your unique phone case today. Upload your favorite photo,
-                customize the style, and we’ll bring it to life.
+                Започни да проектираш своя уникален калъф още днес. Качи любимата си снимка,
+  персонализирай стила и ние ще го превърнем в реалност.
               </p>
               <Link
                 href="/configure/upload"
                 className="mt-8 inline-block px-6 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-pink-500 text-white font-semibold shadow-lg hover:scale-105 transition"
               >
-                Get Started
+                Започни сега
               </Link>
             </div>
           </div>
@@ -193,12 +193,12 @@ export default function Home() {
       <footer className="bg-gray-50 border-t border-gray-200 py-10">
         <MaxWidthWrapper className="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
           <p className="text-gray-600 text-sm">
-            © 2024 CaseCraft, Inc. All rights reserved.
+            © 2024 CaseCraft, Inc. Всички права запазени.
           </p>
           <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-500">
-            <a href="#" className="hover:text-gray-700">Privacy Policy</a>
-            <a href="#" className="hover:text-gray-700">Terms of Service</a>
-            <a href="#" className="hover:text-gray-700">Intellectual Property Policy</a>
+            <a href="#" className="hover:text-gray-700">Политика за поверителност</a>
+  <a href="#" className="hover:text-gray-700">Общи условия</a>
+  <a href="#" className="hover:text-gray-700">Политика за интелектуална собственост</a>
           </div>
         </MaxWidthWrapper>
       </footer>

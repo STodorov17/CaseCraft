@@ -10,25 +10,25 @@ const LoginModal = ({isOpen, setIsOpen,}: { isOpen: boolean; setIsOpen: Dispatch
             <DialogContent className='absolute z-[9999999]'>
                 <DialogHeader>
                     <div className='relative mx-auto w-24 h-24 mb-2'>
-                        <Image src='/sitelogo.png' alt='snake image' className='object-contain rounded-xl' fill />
+                        <Image src='/sitelogo.png' alt='лого' className='object-contain rounded-xl' fill />
                     </div>
                     <DialogTitle className='text-3xl text-center font-bold tracking-tight text-gray-900'>
-                        Log in to continue
+                        Влез, за да продължиш
                     </DialogTitle>
                     <DialogDescription className='text-base text-center py-2'>
                         <span className='font-medium text-zinc-900'>
-                            Your configuration was saved!
+                            Твоята конфигурация беше запазена!
                         </span>{' '}
-                        Please login or create an account to complete your purchase.
+                        Моля, влез или създай акаунт, за да завършиш поръчката си.
                     </DialogDescription>
                 </DialogHeader>
 
                 <div className='grid grid-cols-2 gap-6 divide-x divide-gray-200'>
                     <LoginLink className={buttonVariants({ variant: 'outline' })}>
-                        Login
+                        Вход
                     </LoginLink>
                     <RegisterLink className={buttonVariants({ variant: 'default' })}>
-                        Sign up
+                        Регистрация
                     </RegisterLink>
                 </div>
             </DialogContent>

@@ -10,52 +10,51 @@
 
 import { PRODUCT_PRICES } from "@/config/products"
 
-
 export const COLORS = [
     {
-        label:"Black",
-        value:"black",
-        tw:"zinc-900"
+        label: "Черен",
+        value: "black",
+        tw: "zinc-900"
     },
     {
-        label:"White",
-        value:"white",
-        tw:"white-50",
+        label: "Бял",
+        value: "white",
+        tw: "white-50",
     },
     {
-        label:"Blue",
-        value:"blue",
-        tw:"blue-950",
+        label: "Син",
+        value: "blue",
+        tw: "blue-950",
     },
     {
-        label:"Rose",
-        value:"rose",
-        tw:"rose-950",
+        label: "Розов",
+        value: "rose",
+        tw: "rose-950",
     },
     {
-        label:"Purple",
-        value:"purple",
-        tw:"purple-700",
+        label: "Лилав",
+        value: "purple",
+        tw: "purple-700",
     },
     {
-        label:"Green",
-        value:"green",
-        tw:"green-700",
+        label: "Зелен",
+        value: "green",
+        tw: "green-700",
     },
     {
-        label:"Yellow",
-        value:"yellow",
-        tw:"yellow-700",
+        label: "Жълт",
+        value: "yellow",
+        tw: "yellow-700",
     },
     {
-        label:"Pink",
-        value:"pink",
-        tw:"pink-700",
+        label: "Розов",
+        value: "pink",
+        tw: "pink-700",
     },
     {
-        label:"Red",
-        value:"red",
-        tw:"red-700",
+        label: "Червен",
+        value: "red",
+        tw: "red-700",
     },
 ] as const
 
@@ -97,21 +96,21 @@ export const MATERIALS = {
   name: 'material',
   options: [
     {
-      label: 'Silicone',
+      label: 'Силикон',
       value: 'silicone',
-      description: "Soft, flexible and lightweight",
+      description: "Мек, гъвкав и лек.",
       price: PRODUCT_PRICES.material.silicone,
     },
     {
-      label: "TPU (Hybrid)",
+      label: "TPU (Хибрид)",
       value: "tpu",
-      description: "Durable and resistant to scratches.",
+      description: "Здрав и устойчив на надрасквания.",
       price: PRODUCT_PRICES.material.tpu,
     },
     {
-      label: 'Soft Polycarbonate',
+      label: 'Поликарбонат',
       value: 'polycarbonate',
-      description: 'Hard-shell case with premium protection',
+      description: 'Твърд калъф с премиум защита.',
       price: PRODUCT_PRICES.material.polycarbonate,
     },
   ],
@@ -121,33 +120,33 @@ export const FINISHES = {
   name: 'finish',
   options: [
     {
-      label: 'Smooth Finish',
+      label: 'Гладко покритие',
       value: 'smooth',
       description: undefined,
       price: PRODUCT_PRICES.finish.smooth,
     },
     {
-      label: "Matte",
+      label: "Мат",
       value: "matte",
-      description: "Smooth, non-glossy look with anti-fingerprint coating.",
+      description: "Гладък, неметален вид с покритие против отпечатъци.",
       price: PRODUCT_PRICES.finish.matte,
     },
     {
-      label: "Glossy",
+      label: "Гланц",
       value: "glossy",
-      description: "Shiny finish that makes colors pop and adds a premium look.",
+      description: "Лъскаво покритие, което подсилва цветовете и придава премиум визия.",
       price: PRODUCT_PRICES.finish.glossy,
     },
     {
-      label: "Frosted",
+      label: "Заскрежен",
       value: "frosted",
-      description: "Semi-transparent effect with a subtle frosted texture.",
+      description: "Полупрозрачен ефект с фин матиран завършек.",
       price: PRODUCT_PRICES.finish.frosted,
     },
     {
-      label: 'Textured Finish',
+      label: 'Текстурирано покритие',
       value: 'textured',
-      description: 'Soft grippy texture',
+      description: 'Мека и грапава текстура за по-добър захват.',
       price: PRODUCT_PRICES.finish.textured,
     },
   ],

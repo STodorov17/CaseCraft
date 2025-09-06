@@ -23,8 +23,8 @@ const ThankYou = () => {
       <div className="w-full mt-24 flex justify-center">
         <div className="flex flex-col items-center gap-2">
           <Loader2 className="h-8 w-8 animate-spin text-zinc-500" />
-          <h3 className="font-semibold text-xl">Loading your order...</h3>
-          <p>This won't take long.</p>
+          <h3 className="font-semibold text-xl">Зареждаме твоята поръчка...</h3>
+          <p>Това няма да отнеме много време.</p>
         </div>
       </div>
     )
@@ -35,8 +35,8 @@ const ThankYou = () => {
       <div className="w-full mt-24 flex justify-center">
         <div className="flex flex-col items-center gap-2">
           <Loader2 className="h-8 w-8 animate-spin text-zinc-500" />
-          <h3 className="font-semibold text-xl">Verifying your payment...</h3>
-          <p>This might take a moment.</p>
+          <h3 className="font-semibold text-xl">Потвърждаваме плащането...</h3>
+          <p>Може да отнеме малко време.</p>
         </div>
       </div>
     )
@@ -51,13 +51,13 @@ const ThankYou = () => {
         <div className="flex flex-col items-center text-center">
           <CheckCircle className="h-12 w-12 text-green-500" />
           <h1 className="mt-4 text-3xl font-bold text-gray-900">
-            Thank you for your order!
+            Благодарим за поръчката!
           </h1>
           <p className="mt-2 text-gray-600">
-            We've received your order and are now processing it.
+            Получихме твоята поръчка и я обработваме в момента.
           </p>
           <p className="mt-4 text-sm text-zinc-500">
-            Order number: <span className="font-mono">{orderId}</span>
+            Номер на поръчка: <span className="font-mono">{orderId}</span>
           </p>
         </div>
 
@@ -66,7 +66,7 @@ const ThankYou = () => {
           <div className="p-4 rounded-xl border bg-slate-50">
             <img
               src={configuration.croppedImageUrl ?? "/phone-template.png"}
-              alt="Your custom case"
+              alt="Твоят персонализиран калъф"
               className="w-32 h-64 object-cover rounded-lg shadow-md"
             />
           </div>
@@ -76,7 +76,7 @@ const ThankYou = () => {
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm">
           {/* Shipping */}
           <div className="p-4 border rounded-lg">
-            <p className="font-medium text-gray-900">Shipping address</p>
+            <p className="font-medium text-gray-900">Адрес за доставка</p>
             <address className="mt-2 not-italic text-gray-700">
               <span className="block">{shippingAddress?.name}</span>
               <span className="block">{shippingAddress?.street}</span>
@@ -88,7 +88,7 @@ const ThankYou = () => {
 
           {/* Billing */}
           <div className="p-4 border rounded-lg">
-            <p className="font-medium text-gray-900">Billing address</p>
+            <p className="font-medium text-gray-900">Адрес за фактуриране</p>
             <address className="mt-2 not-italic text-gray-700">
               <span className="block">{billingAddress?.name}</span>
               <span className="block">{billingAddress?.street}</span>
@@ -102,19 +102,19 @@ const ThankYou = () => {
         {/* Payment & totals */}
         <div className="mt-8 p-6 border rounded-lg space-y-4 text-sm">
           <div className="flex justify-between">
-            <p className="text-gray-700">Subtotal</p>
+            <p className="text-gray-700">Междинна сума</p>
             <p>{formatPrice(amount)}</p>
           </div>
           <div className="flex justify-between">
-            <p className="text-gray-700">Shipping</p>
+            <p className="text-gray-700">Доставка</p>
             <p>{formatPrice(7)}</p>
           </div>
           <div className="border-t pt-4 flex justify-between font-semibold text-gray-900">
-            <p>Total</p>
+            <p>Общо</p>
             <p>{formatPrice(amount + 7)}</p>
           </div>
-          <p className="mt-4 text-green-600 font-medium">Payment status: Paid</p>
-          <p className="text-gray-600">Shipping method: Econt (2 working days)</p>
+          <p className="mt-4 text-green-600 font-medium">Статус на плащането: Платено</p>
+          <p className="text-gray-600">Метод на доставка: Еконт (2 работни дни)</p>
         </div>
 
         {/* CTA */}
@@ -123,13 +123,13 @@ const ThankYou = () => {
             href="/"
             className="px-6 py-3 bg-purple-600 text-white rounded-lg shadow hover:bg-purple-700 transition"
           >
-            Back to Home
+            Обратно към началото
           </Link>
           <Link
             href="/configure/upload"
             className="px-6 py-3 border border-purple-600 text-purple-600 rounded-lg hover:bg-purple-50 transition"
           >
-            Create another case
+            Създай още един калъф
           </Link>
         </div>
       </div>
