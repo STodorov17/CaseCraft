@@ -128,7 +128,6 @@ const DesignConfigurator = ({ configId, imageUrl, imageDimensions }: DesignConfi
 
     return (
         <div className="relative mt-16 grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20 pb-20">
-            {/* ЛЯВО - Визуализация на калъфа */}
             <div
                 ref={containerRef}
                 className="relative h-[37.5rem] overflow-hidden col-span-2 w-full max-w-4xl flex items-center justify-center rounded-2xl shadow-lg bg-slate-50 border border-gray-200 p-8"
@@ -172,7 +171,6 @@ const DesignConfigurator = ({ configId, imageUrl, imageDimensions }: DesignConfi
                 </Rnd>
             </div>
 
-            {/* ДЯСНО - Конфигуратор */}
             <div className="h-[37.5rem] w-full col-span-full lg:col-span-1 flex flex-col bg-white rounded-2xl shadow-lg border border-gray-200 
                 lg:min-w-[420px] xl:min-w-[480px]">
                 <ScrollArea className="relative flex-1 overflow-auto">
@@ -183,7 +181,6 @@ const DesignConfigurator = ({ configId, imageUrl, imageDimensions }: DesignConfi
                         <div className="w-full h-px bg-zinc-200" />
 
                         <div className="flex flex-col gap-6">
-                            {/* Цвят */}
                             <RadioGroup
                                 value={options.color}
                                 onChange={(val) => setOptions((prev) => ({ ...prev, color: val }))}
@@ -207,7 +204,6 @@ const DesignConfigurator = ({ configId, imageUrl, imageDimensions }: DesignConfi
                                 </div>
                             </RadioGroup>
 
-                            {/* Модел */}
                             <div className="relative flex flex-col gap-3 w-full">
                                 <Label>Модел</Label>
                                 <DropdownMenu>
@@ -234,7 +230,6 @@ const DesignConfigurator = ({ configId, imageUrl, imageDimensions }: DesignConfi
                                 </DropdownMenu>
                             </div>
 
-                            {/* Материали и покрития */}
                             {[MATERIALS, FINISHES].map(({ name, options: selectableOptions }) => (
                                 <RadioGroup
                                     key={name}
@@ -278,7 +273,6 @@ const DesignConfigurator = ({ configId, imageUrl, imageDimensions }: DesignConfi
                     </div>
                 </ScrollArea>
 
-                {/* Долен бар */}
                 <div className="w-full px-8 py-4 bg-white border-t border-zinc-200 rounded-b-2xl">
                     <div className="flex items-center justify-between">
                         <p className="font-semibold text-lg text-gray-900">

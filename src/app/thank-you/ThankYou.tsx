@@ -4,8 +4,10 @@ import { useQuery } from "@tanstack/react-query"
 import { getPaymentStatus } from "./actions"
 import { useSearchParams } from "next/navigation"
 import { Loader2, CheckCircle } from "lucide-react"
-import { formatPrice } from "@/lib/utils"
+import { cn, formatPrice } from "@/lib/utils"
 import Link from "next/link"
+import Phone from "@/components/Phone"
+import { COLORS } from "@/validators/option-validator"
 
 const ThankYou = () => {
   const searchParams = useSearchParams()
@@ -43,11 +45,11 @@ const ThankYou = () => {
   }
 
   const { configuration, billingAddress, shippingAddress, amount } = data
+  const tw = COLORS.find((supportedColor) => supportedColor.value === configuration.color)?.tw
 
   return (
     <div className="bg-slate-50 min-h-screen py-16 px-4">
       <div className="mx-auto max-w-3xl bg-white rounded-2xl shadow-lg p-8 sm:p-12">
-        {/* Header */}
         <div className="flex flex-col items-center text-center">
           <CheckCircle className="h-12 w-12 text-green-500" />
           <h1 className="mt-4 text-3xl font-bold text-gray-900">
@@ -61,20 +63,16 @@ const ThankYou = () => {
           </p>
         </div>
 
-        {/* Product Preview */}
-        <div className="mt-10 flex justify-center">
-          <div className="p-4 rounded-xl border bg-slate-50">
-            <img
-              src={configuration.croppedImageUrl ?? "/phone-template.png"}
-              alt="Твоят персонализиран калъф"
-              className="w-32 h-64 object-cover rounded-lg shadow-md"
+        <div className="mt-10 flex justify-center relative">
+          <div className="relative w-48 md:w-60">
+            <Phone
+              className={cn(`bg-${tw}`)}
+              imgSrc={configuration.croppedImageUrl!}
             />
           </div>
         </div>
 
-        {/* Info sections */}
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm">
-          {/* Shipping */}
           <div className="p-4 border rounded-lg">
             <p className="font-medium text-gray-900">Адрес за доставка</p>
             <address className="mt-2 not-italic text-gray-700">
@@ -86,7 +84,6 @@ const ThankYou = () => {
             </address>
           </div>
 
-          {/* Billing */}
           <div className="p-4 border rounded-lg">
             <p className="font-medium text-gray-900">Адрес за фактуриране</p>
             <address className="mt-2 not-italic text-gray-700">
@@ -99,7 +96,6 @@ const ThankYou = () => {
           </div>
         </div>
 
-        {/* Payment & totals */}
         <div className="mt-8 p-6 border rounded-lg space-y-4 text-sm">
           <div className="flex justify-between">
             <p className="text-gray-700">Междинна сума</p>
@@ -117,7 +113,6 @@ const ThankYou = () => {
           <p className="text-gray-600">Метод на доставка: Еконт (2 работни дни)</p>
         </div>
 
-        {/* CTA */}
         <div className="mt-10 flex justify-center gap-4">
           <Link
             href="/"

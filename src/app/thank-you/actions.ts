@@ -9,7 +9,7 @@ export const getPaymentStatus = async ({orderId}: {orderId: string}) => {
     const user = await getUser()
 
     if(!user?.id || !user.email) {
-        throw new Error("User not found.")
+        throw new Error("Потребителя не е намерен.")
     }
 
     const order = await db.order.findFirst({
@@ -24,7 +24,7 @@ export const getPaymentStatus = async ({orderId}: {orderId: string}) => {
         })
 
         if(!order) {
-            throw new Error("Order not found.")
+            throw new Error("Поръчката не е намерена.")
         }
 
         if(order.isPaid) {

@@ -84,7 +84,6 @@ const DesignPreview = ({ configuration }: { configuration: Configuration }) => {
             <LoginModal isOpen={isLoginModalOpen} setIsOpen={setIsLoginModalOpen} />
 
             <div className="mt-20 grid grid-cols-1 lg:grid-cols-12 gap-10">
-                {/* Ляво: визуализация на калъфа */}
                 <div className="lg:col-span-5 flex justify-center">
                     <div className="bg-gradient-to-tr from-white to-white p-6 rounded-2xl shadow-lg">
                         <Phone
@@ -94,7 +93,6 @@ const DesignPreview = ({ configuration }: { configuration: Configuration }) => {
                     </div>
                 </div>
 
-                {/* Дясно: детайли за поръчката */}
                 <div className="lg:col-span-7 flex flex-col gap-8">
                     <div>
                         <h3 className="text-3xl font-bold text-gray-900">
@@ -105,7 +103,6 @@ const DesignPreview = ({ configuration }: { configuration: Configuration }) => {
                         </div>
                     </div>
 
-                    {/* Акценти и материали */}
                     <div className="grid sm:grid-cols-2 gap-6">
                         <div className="bg-white p-6 rounded-xl shadow-sm">
                             <h4 className="font-semibold mb-3">Акценти</h4>
@@ -125,7 +122,6 @@ const DesignPreview = ({ configuration }: { configuration: Configuration }) => {
                         </div>
                     </div>
 
-                    {/* Обобщение на поръчката */}
                     <div className="bg-white p-6 rounded-xl shadow-lg">
                         <div className="space-y-3 text-gray-700">
                             <div className="flex justify-between">
