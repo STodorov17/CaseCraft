@@ -7,7 +7,7 @@ import { cn, formatPrice } from "@/lib/utils"
 import { COLORS, FINISHES, MODELS } from "@/validators/option-validator"
 import { Configuration } from "@prisma/client"
 import { useMutation } from "@tanstack/react-query"
-import { ArrowRight, Check } from "lucide-react"
+import { ArrowRight, Check, Loader2 } from "lucide-react"
 import { useEffect, useState } from "react"
 import { toast } from "sonner"
 import { createCheckoutSession } from "./actions"
@@ -20,6 +20,7 @@ const DesignPreview = ({ configuration }: { configuration: Configuration }) => {
     const { id } = configuration
     const { user } = useKindeBrowserClient()
     const [isLoginModalOpen, setIsLoginModalOpen] = useState<boolean>(false)
+    const [isLoadingPayment, setIsLoadingPayment] = useState(false)
 
     useEffect(() => {
         toast(
@@ -189,11 +190,25 @@ const DesignPreview = ({ configuration }: { configuration: Configuration }) => {
                         </div>
 
                         <Button
-                            onClick={handleCheckout}
+                            onClick={() => {
+                                setIsLoadingPayment(true);
+                                handleCheckout();
+                            }}
                             className="w-full mt-6 bg-gradient-to-r from-purple-600 to-pink-500 hover:opacity-90 text-white font-semibold shadow-lg px-6 py-3 rounded-xl transition"
                         >
-                            Към плащане <ArrowRight className="ml-2 h-4 w-4" />
+                            {isLoadingPayment ? (
+                                <>
+                                    Пренасочваме...
+                                    <Loader2 className="h-5 w-5 mr-2 animate-spin" />
+                                </>
+                            ) : (
+                                <>
+                                    Към плащане
+                                    <ArrowRight className="ml-2 h-4 w-4" />
+                                </>
+                            )}
                         </Button>
+
                     </div>
                 </div>
             </div>

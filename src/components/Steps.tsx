@@ -25,7 +25,7 @@ const Steps = () => {
   const pathname = usePathname()
 
   return (
-    <ol className="flex flex-col lg:flex-row items-center justify-between gap-4 bg-white p-6 rounded-lg border border-gray-200">
+    <ol className="flex flex-col lg:flex-row items-center justify-around gap-4 bg-white p-6 rounded-lg border border-gray-200">
       {STEPS.map((step, i) => {
         const isCurrent = pathname.endsWith(step.url)
         const isCompleted = STEPS.slice(i + 1).some((step) =>
@@ -35,7 +35,6 @@ const Steps = () => {
 
         return (
           <li key={step.name} className="relative flex flex-col items-center text-center">
-            {/* картинка в кръг */}
             <div
               className={cn(
                 "flex items-center justify-center w-20 h-20 rounded-full border-4 bg-white shadow-md transition-all",
@@ -53,7 +52,6 @@ const Steps = () => {
               />
             </div>
 
-            {/* текст */}
             <div className="mt-3">
               <p
                 className={cn(
@@ -65,16 +63,6 @@ const Steps = () => {
               </p>
               <p className="text-xs text-gray-500">{step.description}</p>
             </div>
-
-            {/* линия */}
-            {i < STEPS.length - 1 && (
-              <div
-                className={cn(
-                  "absolute top-10 left-[95%] w-110 h-1 rounded",
-                  isCompleted ? "bg-green-500" : "bg-gray-300"
-                )}
-              />
-            )}
           </li>
         )
       })}

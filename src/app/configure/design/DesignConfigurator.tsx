@@ -12,7 +12,7 @@ import { COLORS, FINISHES, MATERIALS, MODELS } from "@/validators/option-validat
 import { Label } from "@/components/ui/label"
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem } from "@/components/ui/dropdown-menu"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Check, ChevronsUpDown } from "lucide-react"
+import { ArrowRight, Check, ChevronsUpDown, Loader2 } from "lucide-react"
 import { BASE_PRICE } from "@/config/products"
 import { useUploadThing } from "@/lib/uploadthing"
 import { toast } from "sonner"
@@ -28,6 +28,7 @@ interface DesignConfiguratorProps {
 
 const DesignConfigurator = ({ configId, imageUrl, imageDimensions }: DesignConfiguratorProps) => {
     const router = useRouter()
+    const [isSaving, setIsSaving] = useState(false)
 
     const { mutate: saveConfig } = useMutation({
         mutationKey: ["save-config"],
@@ -279,19 +280,30 @@ const DesignConfigurator = ({ configId, imageUrl, imageDimensions }: DesignConfi
                             {formatPrice((BASE_PRICE + options.finish.price + options.material.price) / 100)}
                         </p>
                         <Button
-                            onClick={() =>
-                                saveConfig({
+                            onClick={async () => {
+                                setIsSaving(true)
+                                await saveConfig({
                                     configId,
                                     color: options.color.value,
                                     finish: options.finish.value,
                                     material: options.material.value,
                                     model: options.model.value,
                                 })
-                            }
-                            className="px-6 py-3 rounded-lg bg-gradient-to-r from-purple-600 to-pink-500 text-white font-semibold shadow hover:scale-105 transition"
+                            }}
+                            disabled={isSaving}
+                            className="px-6 py-3 rounded-lg bg-gradient-to-r from-purple-600 to-pink-500 text-white font-semibold shadow hover:scale-105 transition flex items-center"
                         >
-                            Продължи
-                            <ArrowRight className="h-4 w-4 ml-2" />
+                            {isSaving ? (
+                                <>
+                                    Запазване...
+                                    <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+                                </>
+                            ) : (
+                                <>
+                                    Продължи
+                                    <ArrowRight className="h-4 w-4 ml-2" />
+                                </>
+                            )}
                         </Button>
                     </div>
                 </div>
