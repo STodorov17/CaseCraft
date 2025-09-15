@@ -190,9 +190,9 @@ export default function Home() {
             © 2024 CaseCraft, Inc. Всички права запазени.
           </p>
           <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-500">
-            <a href="#" className="hover:text-gray-700">Политика за поверителност</a>
-            <a href="#" className="hover:text-gray-700">Общи условия</a>
-            <a href="#" className="hover:text-gray-700">Политика за интелектуална собственост</a>
+            <a href="/privacy" className="hover:text-gray-700">Политика за поверителност</a>
+            <a href="/terms" className="hover:text-gray-700">Общи условия</a>
+            <a href="/ip-policy" className="hover:text-gray-700">Политика за интелектуална собственост</a>
           </div>
         </MaxWidthWrapper>
       </footer>
